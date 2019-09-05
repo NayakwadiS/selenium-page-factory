@@ -110,9 +110,9 @@ Pre-Requisite
 Every Page in Page Object Model should have webdriver object as class member
 same as above example.
 
-Or
+or
 ```python
-class LoginPage(PageFactory):
+class Pageclass(PageFactory):
 
     def __init__(self,driver):
         self.driver =driver
