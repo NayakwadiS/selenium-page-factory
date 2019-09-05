@@ -105,7 +105,7 @@ class LoginPage(PageFactory):
         self.btnSignIn.click_button()
 ```
 
-Note
+Pre-Requisite
 =============
 Every Page in Page Object Model should have webdriver object as class member
 same as above example.
