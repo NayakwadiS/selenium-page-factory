@@ -23,7 +23,7 @@ class LoginPage(PageFactory):
 
 
 def test_Login(self):
-    driver = webdriver.Chrome("D:\Python_SeleniumTest\PyTest-SeleniumTest\MainResources\drivers\chromedriver.exe")
+    driver = webdriver.Chrome("path for driver exe")
     driver.maximize_window()
     driver.implicitly_wait(5)
     driver.get("https://s1.demo.opensourcecms.com/wordpress/wp-login.php")
