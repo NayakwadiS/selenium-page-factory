@@ -84,11 +84,14 @@ class PageFactory(object):
     def get_text(self):
         return self.text
 
-    def clear(self):
+    def clear_text(self):
         self.clear()
 
     def hover(self):
         ActionChains(self.parent).move_to_element(self).perform()
+
+    def is_Checked(self):
+        return self.isSelected()
 
     def w3c(self):
         return self.w3c
@@ -131,8 +134,9 @@ WebElement.visibility_of_element_located = PageFactory.visibility_of_element_loc
 WebElement.set_text = PageFactory.set_text
 WebElement.get_text = PageFactory.get_text
 WebElement.hover = PageFactory.hover
-WebElement.clear = PageFactory.clear
+WebElement.clear_text = PageFactory.clear_text
 WebElement.w3c = PageFactory.w3c
+WebElement.is_Checked = PageFactory.is_Checked
 WebElement.select_element_by_text = PageFactory.select_element_by_text
 WebElement.select_element_by_index = PageFactory.select_element_by_index
 WebElement.select_element_by_value = PageFactory.select_element_by_value
