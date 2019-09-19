@@ -1,5 +1,7 @@
 Project Page
 =============
+<img src="./selenium-page-factory_logo.png"  height="150">
+
 https://github.com/NayakwadiS/selenium-page-factory
 
 selenium-page-factory
