@@ -71,6 +71,10 @@ class PageFactory(object):
         select = Select(self)
         select.select_by_value(value)
 
+    def get_list_item_count(self):
+        select = Select(self)
+        return len(select.options)
+
     def click_button(self):
         self.element_to_be_clickable()
         self.click()
@@ -92,6 +96,9 @@ class PageFactory(object):
 
     def is_Checked(self):
         return self.isSelected()
+
+    def getAttribute(self, attributeName):
+        return self.get_attribute(attributeName)
 
     def w3c(self):
         return self.w3c
@@ -137,7 +144,8 @@ WebElement.hover = PageFactory.hover
 WebElement.clear_text = PageFactory.clear_text
 WebElement.w3c = PageFactory.w3c
 WebElement.is_Checked = PageFactory.is_Checked
+WebElement.getAttribute = PageFactory.getAttribute
 WebElement.select_element_by_text = PageFactory.select_element_by_text
 WebElement.select_element_by_index = PageFactory.select_element_by_index
 WebElement.select_element_by_value = PageFactory.select_element_by_value
-
+WebElement.get_list_item_count = PageFactory.get_list_item_count
