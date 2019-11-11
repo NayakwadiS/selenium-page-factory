@@ -41,7 +41,7 @@ class LoginPage(PageFactory):
 
     def __init__(self,driver):
         # It is necessary to to initialise driver as page class member to implement Page Factory
-        self.driver =driver
+        self.driver = driver
 
     # define locators dictionary where key name will became WebElement using PageFactory
     locators = {
@@ -73,6 +73,7 @@ if __name__ == "__main__":
 
 Inside test_Login.py
 ```python
+import pytest
 from selenium import webdriver
 from seleniumpagefactory.Pagefactory import PageFactory
 
@@ -87,7 +88,7 @@ class LoginPage(PageFactory):
 
     def __init__(self,driver):
         # It is necessary to to initialise driver as page class member to implement Page Factory
-        self.driver =driver
+        self.driver = driver
 
     # define locators dictionary where key name will became WebElement using PageFactory
     locators = {
@@ -105,13 +106,31 @@ class LoginPage(PageFactory):
 
 Pre-Requisite
 =============
-Every Page in Page Object Model should have webdriver object as class member
-same as above example.
+Every Page in Page Object Model should have WebDriver object as class member
+as shown below
 
-or
 ```python
-class Pageclass(PageFactory):
+class PageClass(PageFactory):
 
     def __init__(self,driver):
-        self.driver =driver
+        self.driver = driver
 ```
+
+WebElements Methods
+===================
+  1.set_text
+  2.get_text
+  3.clear_text
+  4.click_button
+  5.get_list_item_count
+  6.select_element_by_text
+  7.select_element_by_index
+  8.select_element_by_value
+  9.hover
+  10.is_Checked
+  11.getAttribute
+  12.element_to_be_clickable
+  13.invisibility_of_element_located
+  14.visibility_of_element_located
+ 
+ Note: Every WebElement will be created after verifying it's Presence and visibility on Page at Run-Time. 
