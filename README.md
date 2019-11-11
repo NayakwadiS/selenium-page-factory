@@ -118,19 +118,19 @@ class PageClass(PageFactory):
 
 WebElements Methods
 ===================
-  1.set_text
-  2.get_text
-  3.clear_text
-  4.click_button
-  5.get_list_item_count
-  6.select_element_by_text
-  7.select_element_by_index
-  8.select_element_by_value
-  9.hover
-  10.is_Checked
-  11.getAttribute
-  12.element_to_be_clickable
-  13.invisibility_of_element_located
-  14.visibility_of_element_located
+1.set_text
+2.get_text
+3.clear_text
+4.click_button
+5.get_list_item_count
+6.select_element_by_text
+7.select_element_by_index
+8.select_element_by_value
+9.hover
+10.is_Checked
+11.getAttribute
+12.element_to_be_clickable
+13.invisibility_of_element_located
+14.visibility_of_element_located
  
  Note: Every WebElement will be created after verifying it's Presence and visibility on Page at Run-Time. 
