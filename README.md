@@ -126,6 +126,8 @@ WebElements Methods
 * select_element_by_text
 * select_element_by_index
 * select_element_by_value
+* get_all_list_item
+* get_list_selected_item
 * hover
 * is_Checked
 * getAttribute
