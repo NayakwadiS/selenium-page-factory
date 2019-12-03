@@ -75,6 +75,13 @@ class PageFactory(object):
         select = Select(self)
         return len(select.options)
 
+    def get_all_list_item(self):
+        select = Select(self)
+        list_item=[]
+        for item in select.options:
+            list_item.append(item)
+        return list_item
+
     def click_button(self):
         self.element_to_be_clickable()
         self.click()
@@ -149,3 +156,4 @@ WebElement.select_element_by_text = PageFactory.select_element_by_text
 WebElement.select_element_by_index = PageFactory.select_element_by_index
 WebElement.select_element_by_value = PageFactory.select_element_by_value
 WebElement.get_list_item_count = PageFactory.get_list_item_count
+WebElement.get_all_list_item = PageFactory.get_all_list_item
