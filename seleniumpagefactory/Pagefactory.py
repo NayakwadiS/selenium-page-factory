@@ -79,7 +79,7 @@ class PageFactory(object):
         select = Select(self)
         list_item=[]
         for item in select.options:
-            list_item.append(item)
+            list_item.append(item.text)
         return list_item
 
     def click_button(self):
