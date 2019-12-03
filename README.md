@@ -30,7 +30,7 @@ pip install:
 
 Examples
 =============
-1. Python - Unittest
+Python - Unittest
 
 ```python
 from seleniumpagefactory.Pagefactory import PageFactory
@@ -69,7 +69,7 @@ class LoginTest(unittest.TestCase):
 if __name__ == "__main__":
      unittest.main()
 ```
-2. Python - Pytest
+Python - Pytest
 
 Inside test_Login.py
 ```python
