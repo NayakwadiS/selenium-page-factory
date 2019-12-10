@@ -29,7 +29,19 @@ Installation
 pip install
 
 ```shell
-> pip install selenium-page-factory
+  pip install selenium-page-factory
+```
+
+Pre-Requisite
+=============
+Every Page in Page Object Model should have WebDriver object as class member
+as shown below
+
+```python
+class PageClass(PageFactory):
+
+    def __init__(self,driver):
+        self.driver = driver
 ```
 
 WebElements Methods
@@ -128,16 +140,4 @@ class LoginPage(PageFactory):
         self.edtUserName.set_text("opensourcecms")               # edtUserName become class variable using PageFactory
         self.edtPassword.set_text("opensourcecms")
         self.btnSignIn.click_button()
-```
-
-Pre-Requisite
-=============
-Every Page in Page Object Model should have WebDriver object as class member
-as shown below
-
-```python
-class PageClass(PageFactory):
-
-    def __init__(self,driver):
-        self.driver = driver
 ```
