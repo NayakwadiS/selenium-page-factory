@@ -1,4 +1,4 @@
-Introduction.
+Introduction
 ============
 * Python library provides page factory approach to implement page object model in selenium
 * A Page Factory is one way of implementing a Page Object Model. In order to support the Page Object pattern.
@@ -10,7 +10,7 @@ Github Project Page
 
 https://github.com/NayakwadiS/selenium-page-factory
 
-Main Features:
+Main Features
 =============
 
 * Initialise all the webElements declared in Point at a time.
@@ -20,24 +20,20 @@ Main Features:
 
 Installation
 =============
-pip install:
+pip install::
 
 	pip install selenium-page-factory
 
-
 Update
 ===============
-
-To updated to the lasted version:
+To updated to the lasted version::
 
 	pip install selenium-page-factory --upgrade
-
 
 Pre-Requisite
 =============
 Every Page in Page Object Model should have WebDriver object as class member
-as shown below
-
+as shown below::
 
 class PageClass(PageFactory):
 
@@ -73,7 +69,7 @@ Examples
 Python - Unittest
 --------------
 
-```python
+::
 from seleniumpagefactory.Pagefactory import PageFactory
 import unittest
 from selenium import webdriver
@@ -109,13 +105,14 @@ class LoginTest(unittest.TestCase):
 
 if __name__ == "__main__":
      unittest.main()
-```
+
 
 Python - Pytest
 ---------------
 
+::
 Inside test_Login.py
-```python
+
 import pytest
 from selenium import webdriver
 from seleniumpagefactory.Pagefactory import PageFactory
@@ -145,6 +142,3 @@ class LoginPage(PageFactory):
         self.edtUserName.set_text("opensourcecms")               # edtUserName become class variable using PageFactory
         self.edtPassword.set_text("opensourcecms")
         self.btnSignIn.click_button()
-```
-
-
