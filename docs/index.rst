@@ -1,4 +1,4 @@
-Introduction
+Introduction.
 ============
 * Python library provides page factory approach to implement page object model in selenium
 * A Page Factory is one way of implementing a Page Object Model. In order to support the Page Object pattern.
@@ -10,7 +10,7 @@ Github Project Page
 
 https://github.com/NayakwadiS/selenium-page-factory
 
-Main Features
+Main Features:
 =============
 
 * Initialise all the webElements declared in Point at a time.
@@ -35,10 +35,10 @@ Pre-Requisite
 Every Page in Page Object Model should have WebDriver object as class member
 as shown below::
 
-class PageClass(PageFactory):
+	class PageClass(PageFactory):
 
-    def __init__(self,driver):
-        self.driver = driver
+	    def __init__(self,driver):
+		self.driver = driver
 
 Extended WebElements Methods
 ============================
@@ -69,76 +69,76 @@ Examples
 Python - Unittest
 --------------
 
-::
-from seleniumpagefactory.Pagefactory import PageFactory
-import unittest
-from selenium import webdriver
+Inside test_Login.py::
 
-class LoginPage(PageFactory):
+	import unittest
+	from selenium import webdriver
+	from seleniumpagefactory.Pagefactory import PageFactory
 
-    def __init__(self,driver):
-        # It is necessary to to initialise driver as page class member to implement Page Factory
-        self.driver = driver
+	class LoginPage(PageFactory):
 
-    # define locators dictionary where key name will became WebElement using PageFactory
-    locators = {
-        "edtUserName": ('ID', 'user_login'),
-        "edtPassword": ('NAME', 'pwd'),
-        "btnSignIn": ('XPATH', '//input[@value="Log In"]')
-    }
+	    def __init__(self,driver):
+		# It is necessary to to initialise driver as page class member to implement Page Factory
+		self.driver = driver
 
-    def login(self):
-        # set_text(), click_button() methods are extended methods in PageFactory
-        self.edtUserName.set_text("opensourcecms")               # edtUserName become class variable using PageFactory
-        self.edtPassword.set_text("opensourcecms")
-        self.btnSignIn.click_button()
+	    # define locators dictionary where key name will became WebElement using PageFactory
+	    locators = {
+		"edtUserName": ('ID', 'user_login'),
+		"edtPassword": ('NAME', 'pwd'),
+		"btnSignIn": ('XPATH', '//input[@value="Log In"]')
+	    }
+
+	    def login(self):
+		# set_text(), click_button() methods are extended methods in PageFactory
+		self.edtUserName.set_text("opensourcecms")               # edtUserName become class variable using PageFactory
+		self.edtPassword.set_text("opensourcecms")
+		self.btnSignIn.click_button()
 
 
-class LoginTest(unittest.TestCase):
+	class LoginTest(unittest.TestCase):
 
-    def test_Login(self):
-        driver = webdriver.Chrome()
-        driver.get("https://s1.demo.opensourcecms.com/wordpress/wp-login.php")
+	    def test_Login(self):
+		driver = webdriver.Chrome()
+		driver.get("https://s1.demo.opensourcecms.com/wordpress/wp-login.php")
 
-        pglogin = LoginPage(driver)
-        pglogin.login()
+		pglogin = LoginPage(driver)
+		pglogin.login()
 
-if __name__ == "__main__":
-     unittest.main()
+	if __name__ == "__main__":
+	     unittest.main()
 
 
 Python - Pytest
 ---------------
 
-::
-Inside test_Login.py
+Inside test_Login.py::
 
-import pytest
-from selenium import webdriver
-from seleniumpagefactory.Pagefactory import PageFactory
+	import pytest
+	from selenium import webdriver
+	from seleniumpagefactory.Pagefactory import PageFactory
 
-def test_Login():
-    driver = webdriver.Chrome("")
-    driver.get("https://s1.demo.opensourcecms.com/wordpress/wp-login.php")
+	def test_Login():
+	    driver = webdriver.Chrome("")
+	    driver.get("https://s1.demo.opensourcecms.com/wordpress/wp-login.php")
 
-    pglogin = LoginPage(driver)
-    pglogin.login()
+	    pglogin = LoginPage(driver)
+	    pglogin.login()
 
-class LoginPage(PageFactory):
+	class LoginPage(PageFactory):
 
-    def __init__(self,driver):
-        # It is necessary to to initialise driver as page class member to implement Page Factory
-        self.driver = driver
+	    def __init__(self,driver):
+		# It is necessary to to initialise driver as page class member to implement Page Factory
+		self.driver = driver
 
-    # define locators dictionary where key name will became WebElement using PageFactory
-    locators = {
-        "edtUserName": ('ID', 'user_login'),
-        "edtPassword": ('NAME', 'pwd'),
-        "btnSignIn": ('XPATH', '//input[@value="Log In"]')
-    }
+	    # define locators dictionary where key name will became WebElement using PageFactory
+	    locators = {
+		"edtUserName": ('ID', 'user_login'),
+		"edtPassword": ('NAME', 'pwd'),
+		"btnSignIn": ('XPATH', '//input[@value="Log In"]')
+	    }
 
-    def login(self):
-        # set_text(), click_button() methods are extended methods in PageFactory
-        self.edtUserName.set_text("opensourcecms")               # edtUserName become class variable using PageFactory
-        self.edtPassword.set_text("opensourcecms")
-        self.btnSignIn.click_button()
+	    def login(self):
+		# set_text(), click_button() methods are extended methods in PageFactory
+		self.edtUserName.set_text("opensourcecms")               # edtUserName become class variable using PageFactory
+		self.edtPassword.set_text("opensourcecms")
+		self.btnSignIn.click_button()
