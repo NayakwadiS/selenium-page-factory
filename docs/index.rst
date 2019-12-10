@@ -22,16 +22,15 @@ Installation
 =============
 pip install:
 
-```shell
-> pip install selenium-page-factory
-```
+	pip install selenium-page-factory
+
 
 Update
 ===============
 
-To updated to the lasted version::
+To updated to the lasted version:
 
-    pip install selenium-page-factory --upgrade
+	pip install selenium-page-factory --upgrade
 
 
 Pre-Requisite
@@ -39,12 +38,11 @@ Pre-Requisite
 Every Page in Page Object Model should have WebDriver object as class member
 as shown below
 
-```python
+
 class PageClass(PageFactory):
 
     def __init__(self,driver):
         self.driver = driver
-```
 
 Extended WebElements Methods
 ============================
