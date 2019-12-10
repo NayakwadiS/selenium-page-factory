@@ -9,7 +9,7 @@ Project Page
 =============
 https://selenium-page-factory.readthedocs.io
 
-Introduction.
+Introduction
 ============
 
 * A Page Factory is one way of implementing a Page Object Model. In order to support the Page Object pattern.
@@ -17,7 +17,7 @@ Introduction.
 Dictionary keys become WebElement / class member variable with having all extended WebElement methods.
   
 
-Main Features:
+Main Features
 =============
 
 * Initialise all the webElements declared in Point at a time.
@@ -26,12 +26,34 @@ Main Features:
 
 Installation
 =============
-pip install:
+pip install
 
 ```shell
 > pip install selenium-page-factory
 ```
 
+WebElements Methods
+===================
+* set_text
+* get_text
+* clear_text
+* click_button
+* get_list_item_count
+* select_element_by_text
+* select_element_by_index
+* select_element_by_value
+* get_all_list_item
+* get_list_selected_item
+* hover
+* is_Checked
+* getAttribute
+* element_to_be_clickable
+* invisibility_of_element_located
+* visibility_of_element_located
+ 
+ Note: 
+ Every WebElement will be created after verifying it's Presence and visibility on Page at Run-Time. 
+ 
 Examples
 =============
 Python - Unittest
@@ -119,24 +141,3 @@ class PageClass(PageFactory):
     def __init__(self,driver):
         self.driver = driver
 ```
-
-WebElements Methods
-===================
-* set_text
-* get_text
-* clear_text
-* click_button
-* get_list_item_count
-* select_element_by_text
-* select_element_by_index
-* select_element_by_value
-* get_all_list_item
-* get_list_selected_item
-* hover
-* is_Checked
-* getAttribute
-* element_to_be_clickable
-* invisibility_of_element_located
-* visibility_of_element_located
- 
- Note: Every WebElement will be created after verifying it's Presence and visibility on Page at Run-Time. 
