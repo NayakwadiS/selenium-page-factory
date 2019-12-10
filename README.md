@@ -26,7 +26,6 @@ Main Features
 
 Installation
 =============
-pip install
 
 ```shell
   pip install selenium-page-factory
