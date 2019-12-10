@@ -1,4 +1,4 @@
-Introduction.
+Introduction
 ============
 * Python library provides page factory approach to implement page object model in selenium
 * A Page Factory is one way of implementing a Page Object Model. In order to support the Page Object pattern.
@@ -10,7 +10,7 @@ Github Project Page
 
 https://github.com/NayakwadiS/selenium-page-factory
 
-Main Features:
+Main Features
 =============
 
 * Initialise all the webElements declared in Point at a time.
