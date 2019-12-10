@@ -5,6 +5,10 @@ selenium-page-factory
 
 Python library provides page factory approach to implement page object model in selenium
 
+Project Page
+=============
+https://selenium-page-factory.readthedocs.io
+
 Introduction.
 ============
 
