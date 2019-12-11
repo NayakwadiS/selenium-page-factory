@@ -7,7 +7,13 @@ Python library provides page factory approach to implement page object model in 
 
 Project Page
 =============
+https://github.com/NayakwadiS/selenium-page-factory
+
+
+Project Documentation
+=====================
 https://selenium-page-factory.readthedocs.io
+
 
 Introduction
 ============
