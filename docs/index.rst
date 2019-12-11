@@ -14,7 +14,7 @@ Main Features
 =============
 
 * Initialise all the webElements declared in Point at a time.
-* All WebElements methods are re-define to add extra features eg- click method extended to have explicit wait.
+* All WebElements methods are re-define to add extra features eg- click method extended to have explicit wait for element to be clickable.
 * Cent percent unittest coverage.
 
 
