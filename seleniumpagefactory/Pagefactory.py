@@ -110,6 +110,9 @@ class PageFactory(object):
 
     def is_Checked(self):
         return self.isSelected()
+	
+    def is_Enabled(self):
+        return self.isEnabled()
 
     def getAttribute(self, attributeName):
         return self.get_attribute(attributeName)
@@ -158,6 +161,7 @@ WebElement.hover = PageFactory.hover
 WebElement.clear_text = PageFactory.clear_text
 WebElement.w3c = PageFactory.w3c
 WebElement.is_Checked = PageFactory.is_Checked
+WebElement.is_Enabled = PageFactory.is_Enabled
 WebElement.getAttribute = PageFactory.getAttribute
 WebElement.select_element_by_text = PageFactory.select_element_by_text
 WebElement.select_element_by_index = PageFactory.select_element_by_index
