@@ -64,6 +64,6 @@ WebElements Methods
  Every WebElement will be created after verifying it's Presence and visibility on Page at Run-Time. 
  
 
-Project Documentation and Examples
+Project Documentation with Examples
 ==================================
 https://selenium-page-factory.readthedocs.io
