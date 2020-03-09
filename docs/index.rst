@@ -54,6 +54,7 @@ Extended WebElements Methods
 * get_list_selected_item
 * hover
 * is_Checked
+* is_Enabled
 * getAttribute
 * element_to_be_clickable
 * invisibility_of_element_located
