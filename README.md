@@ -5,15 +5,6 @@ selenium-page-factory
 
 Python library provides page factory approach to implement page object model in selenium
 
-Project Page
-=============
-https://github.com/NayakwadiS/selenium-page-factory
-
-
-Project Documentation
-=====================
-https://selenium-page-factory.readthedocs.io
-
 
 Introduction
 ============
@@ -63,6 +54,7 @@ WebElements Methods
 * get_list_selected_item
 * hover
 * is_Checked
+* is_Enabled
 * getAttribute
 * element_to_be_clickable
 * invisibility_of_element_located
@@ -71,78 +63,7 @@ WebElements Methods
  Note: 
  Every WebElement will be created after verifying it's Presence and visibility on Page at Run-Time. 
  
-Examples
-=============
-Python - Unittest
 
-```python
-from seleniumpagefactory.Pagefactory import PageFactory
-import unittest
-from selenium import webdriver
-
-class LoginPage(PageFactory):
-
-    def __init__(self,driver):
-        # It is necessary to to initialise driver as page class member to implement Page Factory
-        self.driver = driver
-
-    # define locators dictionary where key name will became WebElement using PageFactory
-    locators = {
-        "edtUserName": ('ID', 'user_login'),
-        "edtPassword": ('NAME', 'pwd'),
-        "btnSignIn": ('XPATH', '//input[@value="Log In"]')
-    }
-
-    def login(self):
-        # set_text(), click_button() methods are extended methods in PageFactory
-        self.edtUserName.set_text("opensourcecms")               # edtUserName become class variable using PageFactory
-        self.edtPassword.set_text("opensourcecms")
-        self.btnSignIn.click_button()
-
-
-class LoginTest(unittest.TestCase):
-
-    def test_Login(self):
-        driver = webdriver.Chrome()
-        driver.get("https://s1.demo.opensourcecms.com/wordpress/wp-login.php")
-
-        pglogin = LoginPage(driver)
-        pglogin.login()
-
-if __name__ == "__main__":
-     unittest.main()
-```
-Python - Pytest
-
-Inside test_Login.py
-```python
-import pytest
-from selenium import webdriver
-from seleniumpagefactory.Pagefactory import PageFactory
-
-def test_Login():
-    driver = webdriver.Chrome("")
-    driver.get("https://s1.demo.opensourcecms.com/wordpress/wp-login.php")
-
-    pglogin = LoginPage(driver)
-    pglogin.login()
-
-class LoginPage(PageFactory):
-
-    def __init__(self,driver):
-        # It is necessary to to initialise driver as page class member to implement Page Factory
-        self.driver = driver
-
-    # define locators dictionary where key name will became WebElement using PageFactory
-    locators = {
-        "edtUserName": ('ID', 'user_login'),
-        "edtPassword": ('NAME', 'pwd'),
-        "btnSignIn": ('XPATH', '//input[@value="Log In"]')
-    }
-
-    def login(self):
-        # set_text(), click_button() methods are extended methods in PageFactory
-        self.edtUserName.set_text("opensourcecms")               # edtUserName become class variable using PageFactory
-        self.edtPassword.set_text("opensourcecms")
-        self.btnSignIn.click_button()
-```
+Project Documentation and Examples
+==================================
+https://selenium-page-factory.readthedocs.io
