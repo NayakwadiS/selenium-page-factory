@@ -10,6 +10,7 @@ from selenium.webdriver.support.ui import Select
 class PageFactory(object):
 
     timeout = 10
+    highlight = False
 
     TYPE_OF_LOCATORS = {
         'css': By.CSS_SELECTOR,
@@ -57,7 +58,12 @@ class PageFactory(object):
 
     def get_web_element(self, *loc):
         element = self.driver.find_element(*loc)
+        self.highlight_web_element(element)
         return element
+
+    def highlight_web_element(self,element):
+        if self.highlight:
+            self.driver.execute_script("arguments[0].style.border='2px ridge #33ffff'", element)
 
     def select_element_by_text(self, text):
         select = Select(self)
