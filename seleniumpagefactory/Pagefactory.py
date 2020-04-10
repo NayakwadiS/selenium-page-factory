@@ -8,7 +8,6 @@ from selenium.webdriver.support.ui import Select
 
 
 class PageFactory(object):
-
     timeout = 10
     highlight = False
 
@@ -39,14 +38,14 @@ class PageFactory(object):
             self.locators[loc][0] = self.TYPE_OF_LOCATORS[self.locators[loc][0].lower()]
             self.locators[loc] = tuple(self.locators[loc])
             try:
-                element = WebDriverWait(self.driver,self.timeout).until(
+                element = WebDriverWait(self.driver, self.timeout).until(
                     EC.presence_of_element_located(self.locators[loc])
                 )
             except (StaleElementReferenceException, NoSuchElementException, TimeoutException) as e:
-                raise Exception("An exception of type "+type(e).__name__+" occurred. With Element -: "+loc)
+                raise Exception("An exception of type " + type(e).__name__ + " occurred. With Element -: " + loc)
 
             try:
-                element = WebDriverWait(self.driver,self.timeout).until(
+                element = WebDriverWait(self.driver, self.timeout).until(
                     EC.visibility_of_element_located(self.locators[loc])
                 )
             except (StaleElementReferenceException, NoSuchElementException, TimeoutException) as e:
@@ -61,7 +60,7 @@ class PageFactory(object):
         self.highlight_web_element(element)
         return element
 
-    def highlight_web_element(self,element):
+    def highlight_web_element(self, element):
         if self.highlight:
             self.driver.execute_script("arguments[0].style.border='2px ridge #33ffff'", element)
 
@@ -83,7 +82,7 @@ class PageFactory(object):
 
     def get_all_list_item(self):
         select = Select(self)
-        list_item=[]
+        list_item = []
         for item in select.options:
             list_item.append(item.text)
         return list_item
@@ -116,7 +115,7 @@ class PageFactory(object):
 
     def is_Checked(self):
         return self.isSelected()
-	
+
     def is_Enabled(self):
         return self.isEnabled()
 
@@ -156,6 +155,9 @@ class PageFactory(object):
             EC.visibility_of(self)
         )
 
+    def execute_script(self, script):
+        self.parent.execute_script(script, self)
+
 
 WebElement.click_button = PageFactory.click_button
 WebElement.element_to_be_clickable = PageFactory.element_to_be_clickable
@@ -175,3 +177,4 @@ WebElement.select_element_by_value = PageFactory.select_element_by_value
 WebElement.get_list_item_count = PageFactory.get_list_item_count
 WebElement.get_all_list_item = PageFactory.get_all_list_item
 WebElement.get_list_selected_item = PageFactory.get_list_selected_item
+WebElement.execute_script = PageFactory.execute_script
