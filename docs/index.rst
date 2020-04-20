@@ -148,7 +148,8 @@ WebElement Methods Usage
 ==========================
 set_text
 ---------
-:
+To perform Set text operation-:
+
 	class LoginPage(PageFactory):
 		
 		def login(self):
@@ -157,7 +158,7 @@ set_text
 
 click_button
 -------------
-:
+To Click on any WebElement-:
 	class LoginPage(PageFactory):
 		
 		def login(self):
