@@ -146,14 +146,18 @@ Inside test_Login.py::
 
 WebElement Methods Usage
 ==========================
-set_text:
+set_text
+---------
+:
 	class LoginPage(PageFactory):
 		
 		def login(self):
 			self.edtUserName.set_text("opensourcecms")
 
 
-click_button:
+click_button
+-------------
+:
 	class LoginPage(PageFactory):
 		
 		def login(self):
