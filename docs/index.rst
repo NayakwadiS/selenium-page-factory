@@ -148,7 +148,7 @@ WebElement Methods Usage
 ==========================
 set_text
 ---------
-To perform Set text operation:
+To perform Set text operation::
 
 	class LoginPage(PageFactory):
 		
@@ -158,7 +158,7 @@ To perform Set text operation:
 
 click_button
 -------------
-To Click on any WebElement:
+To Click on any WebElement::
 
 	class LoginPage(PageFactory):
 		
