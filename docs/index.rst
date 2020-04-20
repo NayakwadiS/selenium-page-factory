@@ -136,6 +136,8 @@ Inside test_Login.py::
 		"edtUserName": ('ID', 'user_login'),
 		"edtPassword": ('NAME', 'pwd'),
 		"btnSignIn": ('XPATH', '//input[@value="Log In"]')
+		"lnkPost": ('XPATH', '//div[contains(text(),"Posts")]'),
+        "lstAction": ('ID', 'bulk-action-selector-top')
 	    }
 
 	    def login(self):
@@ -148,13 +150,30 @@ WebElement Methods Usage
 ==========================
 set_text
 ---------
-To perform Set text operation::
+To perform set text operation::
 
 	class LoginPage(PageFactory):
 		
 		def login(self):
 			self.edtUserName.set_text("opensourcecms")
 
+get_text
+---------
+To clear text from edit box::
+
+	class LoginPage(PageFactory):
+		
+		def login(self):
+			text_from_element = self.edtUserName.get_text()
+
+clear_text
+---------
+To clear text from edit box::
+
+	class LoginPage(PageFactory):
+		
+		def login(self):
+			self.edtUserName.clear_text()  
 
 click_button
 -------------
@@ -165,4 +184,60 @@ To Click on any WebElement::
 		def login(self):
 			self.btnSignIn.click_button()
 						
+						
+get_list_item_count
+------------------
+Get list item count::
+
+	class customPage(PageFactory):
+		
+		def perform_list_operation(self):
+			list_item_count = self.lstAction.get_list_item_count()
+
+select_element_by_text
+----------------------
+To Select list item by using visible text::
+
+	class customPage(PageFactory):
+		
+		def perform_list_operation(self):
+			self.lstAction.select_element_by_text("India")
+
+select_element_by_index
+----------------------
+To Select list item by using index::
+
+	class customPage(PageFactory):
+		
+		def perform_list_operation(self):
+			self.lstAction.select_element_by_index(0)
+
+select_element_by_value
+----------------------
+To Select list item by using webElement value property::
+
+	class customPage(PageFactory):
+		
+		def perform_list_operation(self):
+			self.lstAction.select_element_by_value("country India")
+
+get_all_list_item
+------------------
+Get all list items::
+
+	class customPage(PageFactory):
+		
+		def perform_list_operation(self):
+			list_items = self.lstAction.get_all_list_item()
+
+get_list_selected_item
+------------------
+Get selected list item::
+
+	class customPage(PageFactory):
+		
+		def perform_list_operation(self):
+			selected_list_item = self.lstAction.get_list_selected_item()
+			
+
 			
