@@ -37,7 +37,9 @@ as shown below
 class PageClass(PageFactory):
 
     def __init__(self,driver):
-        self.driver = driver
+        self.driver = driver    # Required
+        self.timeout = 15       #(Optional - Customise your explicit wait for every webElement)
+        self.highlight = True   #(Optional - To highlight every webElement in PageClass)
 ```
 
 WebElements Methods
