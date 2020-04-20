@@ -39,6 +39,8 @@ as shown below::
 
 	    def __init__(self,driver):
 		self.driver = driver
+		self.timeout = 15 		#(Optional)
+		self.highlight = True 	#(Optional)
 
 Extended WebElements Methods
 ============================
@@ -238,6 +240,39 @@ Get selected list item::
 		
 		def perform_list_operation(self):
 			selected_list_item = self.lstAction.get_list_selected_item()
-			
 
+hover
+-------------
+To hover on any WebElement::
+
+	class customPage(PageFactory):
+		
+		def login(self):
+			self.btnSignIn.hover()
+
+is_Checked
+------------------
+Verify RadioButton and CheckBox::
+
+	class customPage(PageFactory):
+		
+		def checkbox_radiobutton_operation(self):
+			checkBox_is_selected = self.chkGender.is_Checked()
 			
+is_Enabled
+------------------
+Verify Enable state of WebElemnt::
+
+	class customPage(PageFactory):
+		
+		def checkbox_radiobutton_operation(self):
+			checkBox_is_enabled = self.chkGender.is_Enabled()
+
+getAttribute
+------------------
+Get HTML attribute value of WebElemnt::
+
+	class customPage(PageFactory):
+		
+		def link_operation(self):
+			title_attribute = self.nextLink.getAttribute("title")			
