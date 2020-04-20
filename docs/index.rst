@@ -143,3 +143,20 @@ Inside test_Login.py::
 		self.edtUserName.set_text("opensourcecms")               # edtUserName become class variable using PageFactory
 		self.edtPassword.set_text("opensourcecms")
 		self.btnSignIn.click_button()
+
+WebElement Methods Usage
+==========================
+set_text:
+	class LoginPage(PageFactory):
+		
+		def login(self):
+			self.edtUserName.set_text("opensourcecms")
+
+
+click_button:
+	class LoginPage(PageFactory):
+		
+		def login(self):
+			self.btnSignIn.click_button()
+						
+			
