@@ -39,8 +39,8 @@ as shown below::
 
 	    def __init__(self,driver):
 		self.driver = driver
-		self.timeout = 15 		#(Optional)
-		self.highlight = True 	#(Optional)
+		self.timeout = 15 	#(Optional - Customise your explicit wait for every webElement)
+		self.highlight = True 	#(Optional - To highlight every webElement in PageClass)
 
 Extended WebElements Methods
 ============================
