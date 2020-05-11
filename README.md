@@ -48,6 +48,7 @@ WebElements Methods
 * get_text
 * clear_text
 * click_button
+* double_click
 * get_list_item_count
 * select_element_by_text
 * select_element_by_index
