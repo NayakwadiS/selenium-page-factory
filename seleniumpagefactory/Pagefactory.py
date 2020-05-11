@@ -99,7 +99,7 @@ class PageFactory(object):
         self.click()
         return self
 	
-	def double_click(self):
+    def double_click(self):
         self.element_to_be_clickable()
         ActionChains(self.parent).double_click(self).perform()
         return self
