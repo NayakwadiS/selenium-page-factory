@@ -98,6 +98,11 @@ class PageFactory(object):
         self.element_to_be_clickable()
         self.click()
         return self
+	
+	def double_click(self):
+        self.element_to_be_clickable()
+        ActionChains(self.parent).double_click(self).perform()
+        return self
 
     def set_text(self, value):
         self.element_to_be_clickable()
@@ -160,6 +165,7 @@ class PageFactory(object):
 
 
 WebElement.click_button = PageFactory.click_button
+WebElement.double_click = PageFactory.double_click
 WebElement.element_to_be_clickable = PageFactory.element_to_be_clickable
 WebElement.invisibility_of_element_located = PageFactory.invisibility_of_element_located
 WebElement.visibility_of_element_located = PageFactory.visibility_of_element_located
