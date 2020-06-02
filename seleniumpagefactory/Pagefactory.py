@@ -184,3 +184,4 @@ WebElement.get_list_item_count = PageFactory.get_list_item_count
 WebElement.get_all_list_item = PageFactory.get_all_list_item
 WebElement.get_list_selected_item = PageFactory.get_list_selected_item
 WebElement.execute_script = PageFactory.execute_script
+
