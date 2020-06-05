@@ -47,8 +47,7 @@ WebElements Methods
 <table>
   <tbody>
     <tr>
-      <th align="center">Custom Methods</th>
-      <th ></th>
+      <th align="center" colspan="2">Custom Methods</th>
     </tr>
     <tr>
       <td >set_text</td>
