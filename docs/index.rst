@@ -88,6 +88,8 @@ Extended WebElements Methods
 	      <td >element_to_be_clickable</td>
 	      <td >execute_script</td>
 	    </tr>
+	    <tr>
+	    </tr>
 	  </tbody>
 	</table>
 
