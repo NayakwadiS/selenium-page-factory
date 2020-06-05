@@ -45,19 +45,54 @@ class PageClass(PageFactory):
 WebElements Methods
 ===================
 
-|                         Custom Methods                          |
-|-------------------------------|---------------------------------|
-|set_text 					            | get_text                        |
-|clear_text 					          |click_button                     |
-|click_button 				          | double_click                    |
-|get_list_item_count 		        | select_element_by_text          |
-|select_element_by_index 	      | select_element_by_value         |
-|get_all_list_item 			        | get_list_selected_item          |
-|hover 						              | is_Checked                      |
-|is_Enabled 					          | getAttribute                    |
-|element_to_be_clickable 	      | invisibility_of_element_located |
-|visibility_of_element_located  | execute_script                  |
- 
+<table>
+  <tbody>
+    <tr>
+      <th align="center">Custom Methods</th>
+      <th align="center"></th>
+    </tr>
+    <tr>
+      <td align="center">set_text</td>
+      <td align="center">get_text</td>
+    </tr>
+    <tr>
+      <td align="center">clear_text</td>
+      <td align="center">click_button</td>
+    </tr>
+    <tr>
+      <td align="center">double_click</td>
+      <td align="center">get_list_item_count</td>
+    </tr>
+	<tr>
+      <td align="center">select_element_by_text</td>
+      <td align="center">select_element_by_index</td>
+    </tr>
+	<tr>
+      <td align="center">select_element_by_value</td>
+      <td align="center">get_all_list_item</td>
+    </tr>
+	<tr>
+      <td align="center">get_list_selected_item</td>
+      <td align="center">highlight</td>
+    </tr>
+	<tr>
+      <td align="center">is_Enabled</td>
+      <td align="center">is_Checked</td>
+    </tr>
+	<tr>
+      <td align="center">getAttribute</td>
+      <td align="center">hover</td>
+    </tr>
+	<tr>
+      <td align="center">visibility_of_element_located</td>
+      <td align="center">invisibility_of_element_located</td>
+    </tr>
+	<tr>
+      <td align="center">element_to_be_clickable</td>
+      <td align="center">execute_script</td>
+    </tr>
+  </tbody>
+</table>
  Note: 
  Every WebElement will be created after verifying it's Presence and visibility on Page at Run-Time. 
  
