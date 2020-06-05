@@ -44,27 +44,51 @@ as shown below::
 
 Extended WebElements Methods
 ============================
-.. list-table:: Title
-* - set_text
-  - get_text
-* - clear_text
-  - click_button
-* - double_click
-  - get_list_item_count
-* - select_element_by_text
-  - select_element_by_index
-* - select_element_by_value
-  - get_all_list_item
-* - get_list_selected_item
-  - hover
-* - is_Checked
-  - is_Enabled
-* - getAttribute
-  - element_to_be_clickable
-* - invisibility_of_element_located
-  - visibility_of_element_located
-* - execute_script
-  - highlight
+.. raw:: html
+<table>
+  <tbody>
+    <tr>
+      <td >set_text</td>
+      <td >get_text</td>
+    </tr>
+    <tr>
+      <td >clear_text</td>
+      <td >click_button</td>
+    </tr>
+    <tr>
+      <td >double_click</td>
+      <td >get_list_item_count</td>
+    </tr>
+	<tr>
+      <td >select_element_by_text</td>
+      <td >select_element_by_index</td>
+    </tr>
+	<tr>
+      <td >select_element_by_value</td>
+      <td >get_all_list_item</td>
+    </tr>
+	<tr>
+      <td >get_list_selected_item</td>
+      <td >highlight</td>
+    </tr>
+	<tr>
+      <td >is_Enabled</td>
+      <td >is_Checked</td>
+    </tr>
+	<tr>
+      <td >getAttribute</td>
+      <td >hover</td>
+    </tr>
+	<tr>
+      <td >visibility_of_element_located</td>
+      <td >invisibility_of_element_located</td>
+    </tr>
+	<tr>
+      <td >element_to_be_clickable</td>
+      <td >execute_script</td>
+    </tr>
+  </tbody>
+</table>
  
 .. note::
 
