@@ -61,26 +61,56 @@ class PageFactory(object):
         return element
 
     def highlight_web_element(self, element):
+        """
+        To highlight webElement
+        :param: WebElement
+        :return: None
+        """
         if self.highlight:
             self.driver.execute_script("arguments[0].style.border='2px ridge #33ffff'", element)
 
     def select_element_by_text(self, text):
+        """
+        Select webElement from dropdown list
+        :param: Text of Item in dropdown
+        :return: None
+        """
         select = Select(self)
         select.select_by_visible_text(text)
 
     def select_element_by_index(self, index):
+        """
+        Select webElement from dropdown list
+        :param: Index of Item in dropdown
+        :return: None
+        """
         select = Select(self)
         select.select_by_index(index)
 
     def select_element_by_value(self, value):
+        """
+        Select webElement from dropdown list
+        :param: value of Item in dropdown
+        :return: None
+        """
         select = Select(self)
         select.select_by_value(value)
 
     def get_list_item_count(self):
+        """
+        Count of Item from Dropdown
+        :param: None
+        :return: count
+        """
         select = Select(self)
         return len(select.options)
 
     def get_all_list_item(self):
+        """
+        Get list of Item from Dropdown
+        :param: None
+        :return: list of items present in dropdown
+        """
         select = Select(self)
         list_item = []
         for item in select.options:
@@ -88,6 +118,11 @@ class PageFactory(object):
         return list_item
 
     def get_list_selected_item(self):
+        """
+        Get list of Selected item in Dropdown
+        :param: None
+        :return: list of items selected in dropdown
+        """
         select = Select(self)
         list_item = []
         for item in select.all_selected_options:
@@ -95,36 +130,81 @@ class PageFactory(object):
         return list_item
 
     def click_button(self):
+        """
+        Perform  click on webElement
+        :param: None
+        :return: webElement
+        """
         self.element_to_be_clickable()
         self.click()
         return self
-	
+
     def double_click(self):
+        """
+        perform Double click on webElement
+        :param: None
+        :return: webElement
+        """
         self.element_to_be_clickable()
         ActionChains(self.parent).double_click(self).perform()
         return self
 
     def set_text(self, value):
+        """
+        type text in input box
+        :param: Text to be Enter
+        :return: webElement
+        """
         self.element_to_be_clickable()
         self.send_keys(value)
         return self
 
     def get_text(self):
+        """
+        get text from input box
+        :param: None
+        :return: text from webElement
+        """
         return self.text
 
     def clear_text(self):
+        """
+        Clear text from EditBox
+        :param: None
+        :return: None
+        """
         self.clear()
 
     def hover(self):
+        """
+        perform hover operation on webElement
+        :param: None
+        :return: None
+        """
         ActionChains(self.parent).move_to_element(self).perform()
 
     def is_Checked(self):
+        """
+        Check Radio button / CheckBox is selected
+        :param: None
+        :return: Boolean
+        """
         return self.isSelected()
 
     def is_Enabled(self):
+        """
+        get Enable state of webElement
+        :param: None
+        :return: Boolean
+        """
         return self.isEnabled()
 
     def getAttribute(self, attributeName):
+        """
+        get webElement attribute
+        :param: name of Attribute
+        :return: webElement attribute value
+        """
         return self.get_attribute(attributeName)
 
     def w3c(self):
@@ -161,6 +241,9 @@ class PageFactory(object):
         )
 
     def execute_script(self, script):
+        """
+        Execute JavaScript using web driver
+        """
         self.parent.execute_script(script, self)
 
 
