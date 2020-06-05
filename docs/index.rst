@@ -92,6 +92,7 @@ Extended WebElements Methods
 	</table>
 
 
+
 .. note::
 
 	Every WebElement will be created after verifying it's Presence and visibility on Page at Run-Time. 
