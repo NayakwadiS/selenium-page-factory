@@ -91,6 +91,7 @@ Extended WebElements Methods
 	  </tbody>
 	</table>
 
+
 .. note::
 
 	Every WebElement will be created after verifying it's Presence and visibility on Page at Run-Time. 
