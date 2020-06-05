@@ -44,55 +44,55 @@ class PageClass(PageFactory):
 
 WebElements Methods
 ===================
-
 <table>
   <tbody>
     <tr>
       <th align="center">Custom Methods</th>
-      <th align="center"></th>
+      <th ></th>
     </tr>
     <tr>
-      <td align="center">set_text</td>
-      <td align="center">get_text</td>
+      <td >set_text</td>
+      <td >get_text</td>
     </tr>
     <tr>
-      <td align="center">clear_text</td>
-      <td align="center">click_button</td>
+      <td >clear_text</td>
+      <td >click_button</td>
     </tr>
     <tr>
-      <td align="center">double_click</td>
-      <td align="center">get_list_item_count</td>
+      <td >double_click</td>
+      <td >get_list_item_count</td>
     </tr>
 	<tr>
-      <td align="center">select_element_by_text</td>
-      <td align="center">select_element_by_index</td>
+      <td >select_element_by_text</td>
+      <td >select_element_by_index</td>
     </tr>
 	<tr>
-      <td align="center">select_element_by_value</td>
-      <td align="center">get_all_list_item</td>
+      <td >select_element_by_value</td>
+      <td >get_all_list_item</td>
     </tr>
 	<tr>
-      <td align="center">get_list_selected_item</td>
-      <td align="center">highlight</td>
+      <td >get_list_selected_item</td>
+      <td >highlight</td>
     </tr>
 	<tr>
-      <td align="center">is_Enabled</td>
-      <td align="center">is_Checked</td>
+      <td >is_Enabled</td>
+      <td >is_Checked</td>
     </tr>
 	<tr>
-      <td align="center">getAttribute</td>
-      <td align="center">hover</td>
+      <td >getAttribute</td>
+      <td >hover</td>
     </tr>
 	<tr>
-      <td align="center">visibility_of_element_located</td>
-      <td align="center">invisibility_of_element_located</td>
+      <td >visibility_of_element_located</td>
+      <td >invisibility_of_element_located</td>
     </tr>
 	<tr>
-      <td align="center">element_to_be_clickable</td>
-      <td align="center">execute_script</td>
+      <td >element_to_be_clickable</td>
+      <td >execute_script</td>
     </tr>
   </tbody>
 </table>
+
  Note: 
  Every WebElement will be created after verifying it's Presence and visibility on Page at Run-Time. 
  
