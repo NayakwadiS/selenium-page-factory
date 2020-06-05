@@ -45,6 +45,7 @@ as shown below::
 Extended WebElements Methods
 ============================
 .. raw:: html
+
 <embed>
 <table>
   <tbody>
