@@ -45,6 +45,7 @@ as shown below::
 Extended WebElements Methods
 ============================
 .. raw:: html
+<embed>
 <table>
   <tbody>
     <tr>
@@ -89,7 +90,8 @@ Extended WebElements Methods
     </tr>
   </tbody>
 </table>
- 
+</embed>
+
 .. note::
 
 	Every WebElement will be created after verifying it's Presence and visibility on Page at Run-Time. 
