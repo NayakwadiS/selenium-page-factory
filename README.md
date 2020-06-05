@@ -42,7 +42,7 @@ class PageClass(PageFactory):
         self.highlight = True   #(Optional - To highlight every webElement in PageClass)
 ```
 
-WebElements Methods
+Customised WebElements Methods
 ===================
 <table>
   <tbody>
