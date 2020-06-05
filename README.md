@@ -45,7 +45,7 @@ class PageClass(PageFactory):
 WebElements Methods
 ===================
 
-| Methods                       |  Methods                        |
+|                         Custom Methods                          |
 |-------------------------------|---------------------------------|
 |set_text 					            | get_text                        |
 |clear_text 					          |click_button                     |
