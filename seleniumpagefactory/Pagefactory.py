@@ -242,9 +242,11 @@ class PageFactory(object):
 
     def execute_script(self, script):
         """
-        Execute JavaScript using web driver
+        Execute JavaScript using web driver on selected web element
+        :param: Javascript to be execute
+        :return: None / depends on Script
         """
-        self.parent.execute_script(script, self)
+        return self.parent.execute_script(script, self)
 
 
 WebElement.click_button = PageFactory.click_button
