@@ -149,6 +149,16 @@ class PageFactory(object):
         ActionChains(self.parent).double_click(self).perform()
         return self
 
+    def context_click(self):
+        """
+        perform Right click on webElement
+        :param: None
+        :return: webElement
+        """
+        self.element_to_be_clickable()
+        ActionChains(self.parent).context_click(self).perform()
+        return self
+
     def set_text(self, value):
         """
         type text in input box
@@ -251,6 +261,7 @@ class PageFactory(object):
 
 WebElement.click_button = PageFactory.click_button
 WebElement.double_click = PageFactory.double_click
+WebElement.context_click = PageFactory.context_click
 WebElement.element_to_be_clickable = PageFactory.element_to_be_clickable
 WebElement.invisibility_of_element_located = PageFactory.invisibility_of_element_located
 WebElement.visibility_of_element_located = PageFactory.visibility_of_element_located
@@ -269,4 +280,3 @@ WebElement.get_list_item_count = PageFactory.get_list_item_count
 WebElement.get_all_list_item = PageFactory.get_all_list_item
 WebElement.get_list_selected_item = PageFactory.get_list_selected_item
 WebElement.execute_script = PageFactory.execute_script
-
