@@ -198,7 +198,7 @@ To perform set text operation::
 
 get_text
 ---------
-To clear text from edit box::
+To get text from edit box::
 
 	class LoginPage(PageFactory):
 		
