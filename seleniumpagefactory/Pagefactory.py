@@ -69,6 +69,9 @@ class PageFactory(object):
         if self.highlight:
             self.driver.execute_script("arguments[0].style.border='2px ridge #33ffff'", element)
 
+
+class ExtraWebElement:
+            
     def select_element_by_text(self, text):
         """
         Select webElement from dropdown list
@@ -259,24 +262,24 @@ class PageFactory(object):
         return self.parent.execute_script(script, self)
 
 
-WebElement.click_button = PageFactory.click_button
-WebElement.double_click = PageFactory.double_click
-WebElement.context_click = PageFactory.context_click
-WebElement.element_to_be_clickable = PageFactory.element_to_be_clickable
-WebElement.invisibility_of_element_located = PageFactory.invisibility_of_element_located
-WebElement.visibility_of_element_located = PageFactory.visibility_of_element_located
-WebElement.set_text = PageFactory.set_text
-WebElement.get_text = PageFactory.get_text
-WebElement.hover = PageFactory.hover
-WebElement.clear_text = PageFactory.clear_text
-WebElement.w3c = PageFactory.w3c
-WebElement.is_Checked = PageFactory.is_Checked
-WebElement.is_Enabled = PageFactory.is_Enabled
-WebElement.getAttribute = PageFactory.getAttribute
-WebElement.select_element_by_text = PageFactory.select_element_by_text
-WebElement.select_element_by_index = PageFactory.select_element_by_index
-WebElement.select_element_by_value = PageFactory.select_element_by_value
-WebElement.get_list_item_count = PageFactory.get_list_item_count
-WebElement.get_all_list_item = PageFactory.get_all_list_item
-WebElement.get_list_selected_item = PageFactory.get_list_selected_item
-WebElement.execute_script = PageFactory.execute_script
+WebElement.click_button = ExtraWebElement.click_button
+WebElement.double_click = ExtraWebElement.double_click
+WebElement.context_click = ExtraWebElement.context_click
+WebElement.element_to_be_clickable = ExtraWebElement.element_to_be_clickable
+WebElement.invisibility_of_element_located = ExtraWebElement.invisibility_of_element_located
+WebElement.visibility_of_element_located = ExtraWebElement.visibility_of_element_located
+WebElement.set_text = ExtraWebElement.set_text
+WebElement.get_text = ExtraWebElement.get_text
+WebElement.hover = ExtraWebElement.hover
+WebElement.clear_text = ExtraWebElement.clear_text
+WebElement.w3c = ExtraWebElement.w3c
+WebElement.is_Checked = ExtraWebElement.is_Checked
+WebElement.is_Enabled = ExtraWebElement.is_Enabled
+WebElement.getAttribute = ExtraWebElement.getAttribute
+WebElement.select_element_by_text = ExtraWebElement.select_element_by_text
+WebElement.select_element_by_index = ExtraWebElement.select_element_by_index
+WebElement.select_element_by_value = ExtraWebElement.select_element_by_value
+WebElement.get_list_item_count = ExtraWebElement.get_list_item_count
+WebElement.get_all_list_item = ExtraWebElement.get_all_list_item
+WebElement.get_list_selected_item = ExtraWebElement.get_list_selected_item
+WebElement.execute_script = ExtraWebElement.execute_script
