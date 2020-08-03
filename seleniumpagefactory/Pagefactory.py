@@ -54,7 +54,7 @@ class PageFactory(object):
             element = self.get_web_element(*self.locators[loc])
             element._locator = self.locators[loc]
             return element
-        super().__getattr__(loc)
+        return super().__getattr__(loc)
 
     def get_web_element(self, *loc):
         element = self.driver.find_element(*loc)
