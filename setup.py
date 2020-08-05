@@ -17,5 +17,6 @@ setup(
     url="https://github.com/NayakwadiS/selenium-page-factory",
     packages=find_packages(),
     long_description = long_description,
-    long_description_content_type='text/markdown'
+    long_description_content_type='text/markdown',
+    tests_require=["pytest"],
 )

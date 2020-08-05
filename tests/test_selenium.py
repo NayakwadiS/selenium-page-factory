@@ -1,5 +1,16 @@
+import pytest
 from selenium import webdriver
 from seleniumpagefactory.Pagefactory import PageFactory
+
+@pytest.fixture
+def wp():
+    driver = webdriver.Chrome()
+    driver.maximize_window()
+    driver.get("https://s1.demo.opensourcecms.com/wordpress/wp-login.php")
+    try:
+        yield driver
+    finally:
+        driver.close()
 
 
 class LoginPage(PageFactory):
@@ -22,11 +33,6 @@ class LoginPage(PageFactory):
         self.btnSignIn.click_button()
 
 
-def test_Login():
-    driver = webdriver.Chrome("path for driver exe")
-    driver.maximize_window()
-    driver.implicitly_wait(5)
-    driver.get("https://s1.demo.opensourcecms.com/wordpress/wp-login.php")
-
-    pglogin = LoginPage(driver)
+def test_Login(wp):
+    pglogin = LoginPage(wp)
     pglogin.login()
