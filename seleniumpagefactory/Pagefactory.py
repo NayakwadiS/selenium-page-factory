@@ -34,25 +34,31 @@ class PageFactory(object):
     def __getattr__(self, loc):
 
         if loc in self.locators.keys():
-            self.locators[loc] = list(self.locators[loc])
-            self.locators[loc][0] = self.TYPE_OF_LOCATORS[self.locators[loc][0].lower()]
-            self.locators[loc] = tuple(self.locators[loc])
+            locator = (self.TYPE_OF_LOCATORS[self.locators[loc][0].lower()], self.locators[loc][1])
             try:
                 element = WebDriverWait(self.driver, self.timeout).until(
-                    EC.presence_of_element_located(self.locators[loc])
+                    EC.presence_of_element_located(locator)
                 )
             except (StaleElementReferenceException, NoSuchElementException, TimeoutException) as e:
-                raise Exception("An exception of type " + type(e).__name__ + " occurred. With Element -: " + loc)
+                raise Exception(
+                    "An exception of type " + type(e).__name__ +
+                    " occurred. With Element -: " + loc +
+                    " - locator: (" + locator[0] + ", " + locator[1] + ")"
+                )
 
             try:
                 element = WebDriverWait(self.driver, self.timeout).until(
-                    EC.visibility_of_element_located(self.locators[loc])
+                    EC.visibility_of_element_located(locator)
                 )
             except (StaleElementReferenceException, NoSuchElementException, TimeoutException) as e:
-                raise Exception("An exception of type " + type(e).__name__ + " occurred. With Element -: " + loc)
+                raise Exception(
+                    "An exception of type " + type(e).__name__ +
+                    " occurred. With Element -: " + loc +
+                    " - locator: (" + locator[0] + ", " + locator[1] + ")"
+                )
 
-            element = self.get_web_element(*self.locators[loc])
-            element._locator = self.locators[loc]
+            element = self.get_web_element(*locator)
+            element._locator = locator
             return element
         return super().__getattr__(loc)
 

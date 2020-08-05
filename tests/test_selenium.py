@@ -23,7 +23,9 @@ class LoginPage(PageFactory):
     locators = {
         "edtUserName": ('ID', 'user_login'),
         "edtPassword": ('NAME', 'pwd'),
-        "btnSignIn": ('XPATH', '//input[@value="Log In"]')
+        "btnSignIn": ('XPATH', '//input[@value="Log In"]'),
+        "menuMedia": ('CSS', "#menu-media > a"),
+        "unknownElement": ("CSS", "somethingWrong"),
     }
 
     def login(self):
@@ -36,3 +38,17 @@ class LoginPage(PageFactory):
 def test_Login(wp):
     pglogin = LoginPage(wp)
     pglogin.login()
+    pglogin.menuMedia.click()
+    # CSS selector were not working as expected while calling a CSS SELECTOR twice
+    # because By.CSS_SELECTOR return a string 'css selector' which is
+    # not present in TYPE_OF_LOCATORS, also getattr were altering locators
+    # attribue
+    pglogin.menuMedia.click()
+
+
+def test_not_found_element(wp):
+    with pytest.raises(Exception) as ex:
+        pglogin = LoginPage(wp)
+        pglogin.timeout = 2
+        pglogin.unknownElement
+    assert 'unknownElement - locator: (css selector, somethingWrong)' in str(ex.value)
