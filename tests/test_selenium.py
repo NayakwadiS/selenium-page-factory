@@ -24,7 +24,7 @@ class LoginPage(PageFactory):
         "edtUserName": ('ID', 'user_login'),
         "edtPassword": ('NAME', 'pwd'),
         "btnSignIn": ('XPATH', '//input[@value="Log In"]'),
-        "menuMedia": ('CSS', "#menu-media > a"),
+        "edtUserLoginCssSelector": ('CSS', "#user_login"),
         "unknownElement": ("CSS", "somethingWrong"),
     }
 
@@ -38,12 +38,16 @@ class LoginPage(PageFactory):
 def test_Login(wp):
     pglogin = LoginPage(wp)
     pglogin.login()
-    pglogin.menuMedia.click()
+
+
+def test_css_selector_call_twice(wp):
+    pglogin = LoginPage(wp)
+    pglogin.edtUserLoginCssSelector.set_text("test")
     # CSS selector were not working as expected while calling a CSS SELECTOR twice
     # because By.CSS_SELECTOR return a string 'css selector' which is
     # not present in TYPE_OF_LOCATORS, also getattr were altering locators
     # attribue
-    pglogin.menuMedia.click()
+    pglogin.edtUserLoginCssSelector.set_text("test2")
 
 
 def test_not_found_element(wp):
