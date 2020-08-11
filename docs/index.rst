@@ -176,7 +176,7 @@ Inside test_Login.py::
 		"edtPassword": ('NAME', 'pwd'),
 		"btnSignIn": ('XPATH', '//input[@value="Log In"]')
 		"lnkPost": ('XPATH', '//div[contains(text(),"Posts")]'),
-        "lstAction": ('ID', 'bulk-action-selector-top')
+        	"lstAction": ('ID', 'bulk-action-selector-top')
 	    }
 
 	    def login(self):
