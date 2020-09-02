@@ -7,7 +7,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name="selenium-page-factory",
-    version="1.8",
+    version="2.1",
     author = "Sujit Nayakwadi",
     author_email="nayakwadi.sujit@gmail.com",
     description="Python library provides page factory approach to implement page object model in selenium",
