@@ -58,7 +58,7 @@ class PageFactory(object):
                 )
 
             element = self.get_web_element(*locator)
-            element._locator = self.locators[loc]
+            element._locator = locator
             return element
         return super().__getattr__(loc)
 
