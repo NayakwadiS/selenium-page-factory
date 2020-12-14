@@ -135,6 +135,19 @@ class PageFactory(object):
         for item in select.all_selected_options:
             list_item.append(item.text)
         return list_item
+        
+    def verify_list_item(self,text):
+        """
+        Verify text to be present in  Dropdown
+        :param: item to be verify
+        :return: True / False
+        """
+        select = Select(self)
+        list_item = []
+        for item in select.options:
+            if text == item.text:
+                return True
+        return False
 
     def click_button(self):
         """
