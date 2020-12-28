@@ -90,14 +90,14 @@ Extended WebElements Methods
 	    </tr>
 	    <tr>
 	    <td>context_click</td>
-	    <td></td>
+	    <td>text_to_be_present_in_element</td>
 	    </tr>
 	    <tr>
 	    </tr>
 	  </tbody>
 	</table>
 
-
+============================
 
 .. note::
 
