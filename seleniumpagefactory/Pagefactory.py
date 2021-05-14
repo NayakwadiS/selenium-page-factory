@@ -236,6 +236,14 @@ class PageFactory(object):
         :return: webElement attribute value
         """
         return self.get_attribute(attributeName)
+    
+    def setAttribute(self, attributeName,value):
+        """
+        set webElement attribute
+        :param: name of Attribute
+        :return: webElement attribute value
+        """
+        return self.parent.execute_script("arguments[0].setAttribute("+attributeName+","+value+")", self)
 
     def w3c(self):
         return self.w3c
