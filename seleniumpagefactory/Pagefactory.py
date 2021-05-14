@@ -301,6 +301,7 @@ WebElement.w3c = PageFactory.w3c
 WebElement.is_Checked = PageFactory.is_Checked
 WebElement.is_Enabled = PageFactory.is_Enabled
 WebElement.getAttribute = PageFactory.getAttribute
+WebElement.setAttribute = PageFactory.setAttribute
 WebElement.select_element_by_text = PageFactory.select_element_by_text
 WebElement.select_element_by_index = PageFactory.select_element_by_index
 WebElement.select_element_by_value = PageFactory.select_element_by_value
