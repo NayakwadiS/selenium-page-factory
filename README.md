@@ -9,6 +9,7 @@ Python library provides page factory approach to implement page object model in 
 [![Pypi](https://img.shields.io/badge/pypi-v2.3-green)](https://pypi.org/project/selenium-page-factory/)
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 ![License](https://img.shields.io/pypi/l/selenium-wire.svg)
+[![Downloads](https://pepy.tech/badge/selenium-page-factory/month)](https://pepy.tech/project/selenium-page-factory)
 
 Introduction
 ============
