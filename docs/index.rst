@@ -234,7 +234,7 @@ To click_and_hold on Element::
 		
 		def login(self):
 			self.btnSignIn.click_and_hold()
-			
+
 release
 -------------
 Releasing a held mouse button on an element:
@@ -243,7 +243,8 @@ Releasing a held mouse button on an element:
 		
 		def login(self):
 			self.btnSignIn.release()
-						
+
+
 get_list_item_count
 ------------------
 Get list item count::
