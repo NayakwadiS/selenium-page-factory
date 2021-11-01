@@ -135,8 +135,8 @@ class PageFactory(object):
         for item in select.all_selected_options:
             list_item.append(item.text)
         return list_item
-        
-    def verify_list_item(self,text):
+
+    def verify_list_item(self, text):
         """
         Verify text to be present in  Dropdown
         :param: item to be verify
@@ -172,11 +172,33 @@ class PageFactory(object):
     def context_click(self):
         """
         perform Right click on webElement
+        Added support for Selenium 4
         :param: None
         :return: webElement
         """
         self.element_to_be_clickable()
-        ActionChains(self.parent).context_click(self).perform()
+        ActionChains(self.parent).context_click(on_element=self)
+        return self
+
+    def click_and_hold(self):
+        """
+        This method will replace the moveToElement(onElement).clickAndHold()
+        Added support for Selenium 4
+        :param: None
+        :return: webElement
+        """
+        self.element_to_be_clickable()
+        ActionChains(self.parent).click_and_hold(on_element=self)
+        return self
+
+    def release(self):
+        """
+        Releasing a held mouse button on an element.
+        Added support for Selenium 4
+        :param: None
+        :return: webElement
+        """
+        ActionChains(self.parent).release(on_element=self)
         return self
 
     def set_text(self, value):
@@ -236,14 +258,14 @@ class PageFactory(object):
         :return: webElement attribute value
         """
         return self.get_attribute(attributeName)
-    
-    def setAttribute(self, attributeName,value):
+
+    def setAttribute(self, attributeName, value):
         """
         set webElement attribute
         :param: name of Attribute
         :return: webElement attribute value
         """
-        return self.parent.execute_script("arguments[0].setAttribute("+attributeName+","+value+")", self)
+        return self.parent.execute_script("arguments[0].setAttribute(" + attributeName + "," + value + ")", self)
 
     def w3c(self):
         return self.w3c
@@ -290,6 +312,8 @@ class PageFactory(object):
 WebElement.click_button = PageFactory.click_button
 WebElement.double_click = PageFactory.double_click
 WebElement.context_click = PageFactory.context_click
+WebElement.click_and_hold = PageFactory.click_and_hold
+WebElement.release = PageFactory.release
 WebElement.element_to_be_clickable = PageFactory.element_to_be_clickable
 WebElement.invisibility_of_element_located = PageFactory.invisibility_of_element_located
 WebElement.visibility_of_element_located = PageFactory.visibility_of_element_located
