@@ -6,7 +6,7 @@ from recommonmark.parser import CommonMarkParser
 project = 'selenium-page-factory'
 
 # The short X.Y version
-version = ''
+version = '2.4'
 # The full version, including alpha/beta/rc tags
 release = '2.4'
 
