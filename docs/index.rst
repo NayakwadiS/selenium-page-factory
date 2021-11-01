@@ -16,6 +16,7 @@ Main Features
 * Initialise all the webElements declared in Point at a time.
 * All WebElements methods are re-define to add extra features eg- click method extended to have explicit wait for element to be clickable.
 * Cent percent unittest coverage.
+* Added Selnium 4 support for ActionChains methods
 
 
 Installation
@@ -89,10 +90,12 @@ Extended WebElements Methods
 	      <td >execute_script</td> 
 	    </tr>
 	    <tr>
-	    <td>context_click</td>
-	    <td>text_to_be_present_in_element</td>
+	    	<td>context_click</td>
+	    	<td>text_to_be_present_in_element</td>
 	    </tr>
 	    <tr>
+	      <td >click_and_hold</td>
+	      <td >release</td> 
 	    </tr>
 	  </tbody>
 	</table>
@@ -223,6 +226,23 @@ To Click on any WebElement::
 		def login(self):
 			self.btnSignIn.click_button()
 						
+click_and_hold
+-------------
+To click_and_hold on Element::
+
+	class LoginPage(PageFactory):
+		
+		def login(self):
+			self.btnSignIn.click_and_hold()
+			
+release
+-------------
+Releasing a held mouse button on an element:
+
+	class LoginPage(PageFactory):
+		
+		def login(self):
+			self.btnSignIn.release()
 						
 get_list_item_count
 ------------------
