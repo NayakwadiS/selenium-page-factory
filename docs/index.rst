@@ -237,7 +237,7 @@ To click_and_hold on Element::
 
 release
 -------------
-Releasing a held mouse button on an element:
+Releasing a held mouse button on an element::
 
 	class LoginPage(PageFactory):
 		
