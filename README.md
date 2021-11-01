@@ -25,7 +25,7 @@ Main Features
 * Initialise all the webElements declared in Point at a time.
 * All WebElements methods are re-define to add extra features eg- click method extended to have explicit wait for element to be clickable.
 * Cent percent unittest coverage.
-* Added Selnium 4 support for ActionChains methods
+* Added Selenium 4 support for ActionChains methods
 
 Installation
 =============
