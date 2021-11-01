@@ -96,6 +96,12 @@ Extended WebElements Methods
       <td >context_click</td>
       <td >execute_script</td> 
     </tr>
+    </tr>
+	</tr>
+	<tr>
+      <td >click_and_hold</td>
+      <td >release</td> 
+    </tr>
   </tbody>
 </table>
 
