@@ -10,6 +10,7 @@ from selenium.webdriver.support.ui import Select
 class PageFactory(object):
     timeout = 10
     highlight = False
+    mobile_test = False
 
     TYPE_OF_LOCATORS = {
         'css': By.CSS_SELECTOR,
@@ -33,33 +34,38 @@ class PageFactory(object):
 
     def __getattr__(self, loc):
 
-        if loc in self.locators.keys():
-            locator = (self.TYPE_OF_LOCATORS[self.locators[loc][0].lower()], self.locators[loc][1])
-            try:
-                element = WebDriverWait(self.driver, self.timeout).until(
-                    EC.presence_of_element_located(locator)
-                )
-            except (StaleElementReferenceException, NoSuchElementException, TimeoutException) as e:
-                raise Exception(
-                    "An exception of type " + type(e).__name__ +
-                    " occurred. With Element -: " + loc +
-                    " - locator: (" + locator[0] + ", " + locator[1] + ")"
-                )
-
-            try:
-                element = WebDriverWait(self.driver, self.timeout).until(
-                    EC.visibility_of_element_located(locator)
-                )
-            except (StaleElementReferenceException, NoSuchElementException, TimeoutException) as e:
-                raise Exception(
-                    "An exception of type " + type(e).__name__ +
-                    " occurred. With Element -: " + loc +
-                    " - locator: (" + locator[0] + ", " + locator[1] + ")"
-                )
-
-            element = self.get_web_element(*locator)
-            element._locator = locator
-            return element
+        if self.mobile_test == True:
+            if loc in self.locators.keys():
+                element = self.find_element_by_accessibility_id(self.locators[loc][1])
+                return element             
+        else:
+            if loc in self.locators.keys():
+                locator = (self.TYPE_OF_LOCATORS[self.locators[loc][0].lower()], self.locators[loc][1])
+                try:
+                    element = WebDriverWait(self.driver, self.timeout).until(
+                        EC.presence_of_element_located(locator)
+                    )
+                except (StaleElementReferenceException, NoSuchElementException, TimeoutException) as e:
+                    raise Exception(
+                        "An exception of type " + type(e).__name__ +
+                        " occurred. With Element -: " + loc +
+                        " - locator: (" + locator[0] + ", " + locator[1] + ")"
+                    )
+    
+                try:
+                    element = WebDriverWait(self.driver, self.timeout).until(
+                        EC.visibility_of_element_located(locator)
+                    )
+                except (StaleElementReferenceException, NoSuchElementException, TimeoutException) as e:
+                    raise Exception(
+                        "An exception of type " + type(e).__name__ +
+                        " occurred. With Element -: " + loc +
+                        " - locator: (" + locator[0] + ", " + locator[1] + ")"
+                    )
+    
+                element = self.get_web_element(*locator)
+                element._locator = locator
+                return element
         return super().__getattr__(loc)
 
     def get_web_element(self, *loc):
