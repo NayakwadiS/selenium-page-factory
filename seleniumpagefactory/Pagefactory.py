@@ -10,7 +10,7 @@ from selenium.webdriver.support.ui import Select
 class PageFactory(object):
     timeout = 10
     highlight = False
-    mobile_test = False
+    mobile_test = False     'Added for Mobile support
 
     TYPE_OF_LOCATORS = {
         'css': By.CSS_SELECTOR,
