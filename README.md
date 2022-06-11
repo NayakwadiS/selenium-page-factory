@@ -6,7 +6,7 @@ selenium-page-factory
 Python library provides page factory approach to implement page object model in selenium
 
 ![Python](https://img.shields.io/badge/python-v3.7+-blue.svg)
-[![Pypi](https://img.shields.io/badge/pypi-v2.4-green)](https://pypi.org/project/selenium-page-factory/)
+[![Pypi](https://img.shields.io/badge/Pypi-v2.5-green)](https://pypi.org/project/selenium-page-factory/)
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 ![License](https://img.shields.io/pypi/l/selenium-wire.svg)
 ![Downloads](https://img.shields.io/pypi/dm/selenium-page-factory)
@@ -43,9 +43,10 @@ as shown below
 class PageClass(PageFactory):
 
     def __init__(self,driver):
-        self.driver = driver    # Required
-        self.timeout = 15       #(Optional - Customise your explicit wait for every webElement)
-        self.highlight = True   #(Optional - To highlight every webElement in PageClass)
+        self.driver = driver        # Required
+        self.timeout = 15      	    #(Optional - Customise your explicit wait for every webElement)
+        self.highlight = True 	    #(Optional - To highlight every webElement in PageClass)
+	self.mobile_test = False    #(Optional - Added for Appium support)
 ```
 
 Extended WebElements Methods
