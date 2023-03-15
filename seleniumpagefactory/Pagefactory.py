@@ -21,14 +21,14 @@ class PageFactory(object):
     mobile_test = False     #Added for Mobile support
 
     TYPE_OF_LOCATORS = {
-        'css selector': By.CSS_SELECTOR,
+        'css': By.CSS_SELECTOR,
         'id': By.ID,
         'name': By.NAME,
         'xpath': By.XPATH,
         'link_text': By.LINK_TEXT,
-        'partial link text': By.PARTIAL_LINK_TEXT,
-        'tag name': By.TAG_NAME,
-        'class name': By.CLASS_NAME
+        'partial_link_text': By.PARTIAL_LINK_TEXT,
+        'tag': By.TAG_NAME,
+        'class_name': By.CLASS_NAME
     }
 
     def __init__(self):
