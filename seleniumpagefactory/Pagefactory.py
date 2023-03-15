@@ -6,6 +6,14 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.ui import Select
 
+class PageFactoryException(Exception):
+    """Base class for exceptions in this module."""
+    pass
+class ElementNotFoundException(PageFactoryException):
+    """Raised when the element is not found in the page. (Using ` EC.presence_of_element_located` function from within __getattr__ method)."""
+class ElementNotVisibleException(PageFactoryException):
+    """Raised when the element is not visible in the page. (Using `EC.visibility_of_element_located` function from within __getattr__ method)."""
+
 
 class PageFactory(object):
     timeout = 10
@@ -46,7 +54,7 @@ class PageFactory(object):
                         EC.presence_of_element_located(locator)
                     )
                 except (StaleElementReferenceException, NoSuchElementException, TimeoutException) as e:
-                    raise Exception(
+                    raise ElementNotFoundException(
                         "An exception of type " + type(e).__name__ +
                         " occurred. With Element -: " + loc +
                         " - locator: (" + locator[0] + ", " + locator[1] + ")"
@@ -57,7 +65,7 @@ class PageFactory(object):
                         EC.visibility_of_element_located(locator)
                     )
                 except (StaleElementReferenceException, NoSuchElementException, TimeoutException) as e:
-                    raise Exception(
+                    raise ElementNotVisibleException(
                         "An exception of type " + type(e).__name__ +
                         " occurred. With Element -: " + loc +
                         " - locator: (" + locator[0] + ", " + locator[1] + ")"
