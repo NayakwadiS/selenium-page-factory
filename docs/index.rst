@@ -136,8 +136,8 @@ Inside test_Login.py::
 
 	    def login(self):
 		# set_text(), click_button() methods are extended methods in PageFactory
-		self.edtUserName.set_text("opensourcecms")               # edtUserName become class variable using PageFactory
-		self.edtPassword.set_text("opensourcecms")
+		self.edtUserName.set_text("<USERNAME>")               # edtUserName become class variable using PageFactory
+		self.edtPassword.set_text("<PASSWORD>")
 		self.btnSignIn.click_button()
 
 
@@ -187,8 +187,8 @@ Inside test_Login.py::
 
 	    def login(self):
 		# set_text(), click_button() methods are extended methods in PageFactory
-		self.edtUserName.set_text("opensourcecms")               # edtUserName become class variable using PageFactory
-		self.edtPassword.set_text("opensourcecms")
+		self.edtUserName.set_text("<USERNAME>")               # edtUserName become class variable using PageFactory
+		self.edtPassword.set_text("<PASSWORD>")
 		self.btnSignIn.click_button()
 
 WebElement Methods Usage
