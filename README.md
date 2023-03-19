@@ -6,7 +6,7 @@ selenium-page-factory
 Python library provides page factory approach to implement page object model in selenium
 
 ![Python](https://img.shields.io/badge/python-v3.7+-blue.svg)
-[![Pypi](https://img.shields.io/badge/Pypi-v2.5-green)](https://pypi.org/project/selenium-page-factory/)
+[![Pypi](https://img.shields.io/badge/Pypi-v2.6-green)](https://pypi.org/project/selenium-page-factory/)
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 ![License](https://img.shields.io/pypi/l/selenium-wire.svg)
 ![Downloads](https://img.shields.io/pypi/dm/selenium-page-factory)
@@ -27,6 +27,7 @@ Main Features
 * Cent percent unittest coverage.
 * Supports Selenium 4 ActionChains methods
 * Now Support Appium for mobile testing
+* Raised custom Page factory exceptions
 
 Installation
 =============
