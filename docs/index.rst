@@ -18,6 +18,7 @@ Main Features
 * Cent percent unittest coverage.
 * Supports Selenium 4 ActionChains methods
 * Now Support Appium for mobile testing
+* Raised custom Page factory exceptions
 
 
 Installation
