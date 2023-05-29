@@ -1,7 +1,7 @@
 selenium-page-factory
 =====================
 
-<img src="./selenium-page-factory_logo.png"  height="150">
+<img src="./selenium-page-factory/docs/logo.jpg"  height="150">
 
 Python library provides page factory approach to implement page object model in selenium
 
