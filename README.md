@@ -1,7 +1,7 @@
 selenium-page-factory
 =====================
 
-<img src="./selenium-page-factory_logo.png"  height="150">
+<img src="./docs/new_logo.JPG"  height="110">
 
 Python library provides page factory approach to implement page object model in selenium
 
@@ -9,6 +9,7 @@ Python library provides page factory approach to implement page object model in 
 [![Pypi](https://img.shields.io/badge/Pypi-v2.6-green)](https://pypi.org/project/selenium-page-factory/)
 ![Dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
 ![License](https://img.shields.io/pypi/l/selenium-wire.svg)
+[![Documentation](https://img.shields.io/badge/Documantation-latest-brightgreen)](https://selenium-page-factory.readthedocs.io/en/latest/)
 ![Downloads](https://img.shields.io/pypi/dm/selenium-page-factory)
 
 Introduction
