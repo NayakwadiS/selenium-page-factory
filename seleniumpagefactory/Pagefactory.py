@@ -214,6 +214,25 @@ class PageFactory(object):
         """
         ActionChains(self.parent).release(on_element=self)
         return self
+        
+    def scroll(self):
+        """
+        If the element is outside the viewport, scrolls the bottom of the element.
+        Added support for Selenium 4
+        :param: None
+        :return: webElement
+        """
+        ActionChains(self.parent).scroll_to_element(element=self)
+        return self
+
+    def send_keys(self, key):
+        """
+        Sends keys to an element. Added support for Selenium 4
+        :param: key: The keys to send. Modifier keys constants can be found in the ‘Keys’ class
+        :return: webElement
+        """
+        ActionChains(self.parent).send_keys_to_element(element=self, *keys_to_send=key)
+        return self
 
     def set_text(self, value):
         """
@@ -328,6 +347,8 @@ WebElement.double_click = PageFactory.double_click
 WebElement.context_click = PageFactory.context_click
 WebElement.click_and_hold = PageFactory.click_and_hold
 WebElement.release = PageFactory.release
+WebElement.scroll = PageFactory.scroll
+WebElement.send_keys = PageFactory.send_keys
 WebElement.element_to_be_clickable = PageFactory.element_to_be_clickable
 WebElement.invisibility_of_element_located = PageFactory.invisibility_of_element_located
 WebElement.visibility_of_element_located = PageFactory.visibility_of_element_located
