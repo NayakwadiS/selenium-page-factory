@@ -222,9 +222,9 @@ class PageFactory(object):
 
     def hover_with_offset(self, x, y):
         """
-        If the element is outside the viewport, scrolls the bottom of the element.
+        Move the mouse by an offset of the specified element. Offsets are relative to the top-left corner of the element.
         Added support for Selenium 4
-        :param: None
+        :param: x and y offset
         :return: webElement
         """
         ActionChains(self.parent).move_to_element_with_offset(to_element=self, xoffset=x, yoffset=y)
