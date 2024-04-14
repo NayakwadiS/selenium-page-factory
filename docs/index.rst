@@ -100,6 +100,10 @@ Extended WebElements Methods
 	      <td >click_and_hold</td>
 	      <td >release</td> 
 	    </tr>
+	     <tr>
+	      <td >hover_with_offset</td>
+	      <td >Coming soon...</td> 
+	    </tr>
 	  </tbody>
 	</table>
 
