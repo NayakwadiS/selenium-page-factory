@@ -6,11 +6,16 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.ui import Select
 
+
 class PageFactoryException(Exception):
     """Base class for exceptions in this module."""
     pass
+
+
 class ElementNotFoundException(PageFactoryException):
     """Raised when the element is not found in the page. (Using ` EC.presence_of_element_located` function from within __getattr__ method)."""
+
+
 class ElementNotVisibleException(PageFactoryException):
     """Raised when the element is not visible in the page. (Using `EC.visibility_of_element_located` function from within __getattr__ method)."""
 
@@ -18,7 +23,7 @@ class ElementNotVisibleException(PageFactoryException):
 class PageFactory(object):
     timeout = 10
     highlight = False
-    mobile_test = False     #Added for Mobile support
+    mobile_test = False  # Added for Mobile support
 
     TYPE_OF_LOCATORS = {
         'css': By.CSS_SELECTOR,
@@ -45,7 +50,7 @@ class PageFactory(object):
         if self.mobile_test == True:
             if loc in self.locators.keys():
                 element = self.find_element_by_accessibility_id(self.locators[loc][1])
-                return element             
+                return element
         else:
             if loc in self.locators.keys():
                 locator = (self.TYPE_OF_LOCATORS[self.locators[loc][0].lower()], self.locators[loc][1])
@@ -59,7 +64,7 @@ class PageFactory(object):
                         " occurred. With Element -: " + loc +
                         " - locator: (" + locator[0] + ", " + locator[1] + ")"
                     )
-    
+
                 try:
                     element = WebDriverWait(self.driver, self.timeout).until(
                         EC.visibility_of_element_located(locator)
@@ -70,7 +75,7 @@ class PageFactory(object):
                         " occurred. With Element -: " + loc +
                         " - locator: (" + locator[0] + ", " + locator[1] + ")"
                     )
-    
+
                 element = self.get_web_element(*locator)
                 element._locator = locator
                 return element
@@ -215,6 +220,16 @@ class PageFactory(object):
         ActionChains(self.parent).release(on_element=self)
         return self
 
+    def hover_with_offset(self, x, y):
+        """
+        Move the mouse by an offset of the specified element. Offsets are relative to the top-left corner of the element.
+        Added support for Selenium 4
+        :param: x and y offset
+        :return: webElement
+        """
+        ActionChains(self.parent).move_to_element_with_offset(to_element=self, xoffset=x, yoffset=y)
+        return self
+
     def set_text(self, value):
         """
         type text in input box
@@ -328,6 +343,7 @@ WebElement.double_click = PageFactory.double_click
 WebElement.context_click = PageFactory.context_click
 WebElement.click_and_hold = PageFactory.click_and_hold
 WebElement.release = PageFactory.release
+WebElement.hover_with_offset = PageFactory.hover_with_offset
 WebElement.element_to_be_clickable = PageFactory.element_to_be_clickable
 WebElement.invisibility_of_element_located = PageFactory.invisibility_of_element_located
 WebElement.visibility_of_element_located = PageFactory.visibility_of_element_located
