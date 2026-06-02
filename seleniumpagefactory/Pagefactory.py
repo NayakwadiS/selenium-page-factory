@@ -5,6 +5,7 @@ from selenium.common.exceptions import *
 from selenium.webdriver import ActionChains
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.support.ui import Select
+import time
 
 
 class PageFactoryException(Exception):
@@ -85,6 +86,17 @@ class PageFactory(object):
         element = self.driver.find_element(*loc)
         self.highlight_web_element(element)
         return element
+
+    def get_web_elements(self, *loc):
+        """
+        Find multiple elements matching locator
+        :param loc: Locator tuple (By, value)
+        :return: List of webElements
+        """
+        elements = self.driver.find_elements(*loc)
+        for element in elements:
+            self.highlight_web_element(element)
+        return elements
 
     def highlight_web_element(self, element):
         """
@@ -337,6 +349,43 @@ class PageFactory(object):
         """
         return self.parent.execute_script(script, self)
 
+    def scroll_into_view(self, align_to_top=True):
+        """
+        Scroll element into viewport before interaction
+        :param align_to_top: If True, top of element aligns with top of viewport
+        :return: webElement
+        """
+        script = "arguments[0].scrollIntoView(arguments[1]);"
+        self.parent.execute_script(script, self, align_to_top)
+        return self
+
+    def drag_and_drop_to(self, target_element):
+        """
+        Drag current element and drop to target element
+        :param target_element: Target WebElement to drop to
+        :return: webElement
+        """
+        ActionChains(self.parent).drag_and_drop(self, target_element).perform()
+        return self
+
+    def click_with_retry(self, retries=3, delay=1):
+        """
+        Click with retry mechanism to handle stale element references
+        :param retries: Number of retry attempts (default: 3)
+        :param delay: Delay between retries in seconds (default: 1)
+        :return: webElement
+        """
+        for attempt in range(retries):
+            try:
+                self.element_to_be_clickable()
+                self.click()
+                return self
+            except StaleElementReferenceException:
+                if attempt == retries - 1:
+                    raise
+                time.sleep(delay)
+        return self
+
 
 WebElement.click_button = PageFactory.click_button
 WebElement.double_click = PageFactory.double_click
@@ -364,3 +413,6 @@ WebElement.get_all_list_item = PageFactory.get_all_list_item
 WebElement.get_list_selected_item = PageFactory.get_list_selected_item
 WebElement.execute_script = PageFactory.execute_script
 WebElement.verify_list_item = PageFactory.verify_list_item
+WebElement.scroll_into_view = PageFactory.scroll_into_view
+WebElement.drag_and_drop_to = PageFactory.drag_and_drop_to
+WebElement.click_with_retry = PageFactory.click_with_retry
