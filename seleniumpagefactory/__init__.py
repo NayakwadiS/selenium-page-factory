@@ -17,5 +17,5 @@
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
     SOFTWARE.
 """
-__VERSION__='0.1'
+__VERSION__='2.8'
 from seleniumpagefactory.Pagefactory import PageFactory
