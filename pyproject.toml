@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "selenium-page-factory"
+version = "2.8"
+description = "Python library provides page factory approach to implement page object model in selenium"
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+keywords = ["selenium", "page object model", "pom", "pages", "page factory", "automation", "testing", "webdriver"]
+authors = [
+    {name = "Sujit Nayakwadi", email = "nayakwadi_sujit@rediffmail.com"}
+]
+maintainers = [
+    {name = "Sujit Nayakwadi", email = "nayakwadi_sujit@rediffmail.com"}
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Operating System :: OS Independent",
+    "Framework :: Pytest",
+]
+
+dependencies = [
+    "selenium>=3.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=3.0.0",
+]
+docs = [
+    "sphinx>=4.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/NayakwadiS/selenium-page-factory"
+Documentation = "https://selenium-page-factory.readthedocs.io"
+Repository = "https://github.com/NayakwadiS/selenium-page-factory"
+"Bug Tracker" = "https://github.com/NayakwadiS/selenium-page-factory/issues"
+Changelog = "https://github.com/NayakwadiS/selenium-page-factory/blob/master/CHANGELOG.md"
+
+[tool.setuptools]
+packages = ["seleniumpagefactory"]
+
+[tool.setuptools.package-data]
+seleniumpagefactory = ["py.typed"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra -q --strict-markers"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+
+[tool.coverage.run]
+source = ["seleniumpagefactory"]
+omit = ["*/tests/*", "*/test_*.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+]
+

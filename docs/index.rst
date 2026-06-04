@@ -527,7 +527,7 @@ Here's a complete example using all new v2.7 features::
 		unittest.main()
 
 
-Upgrade Guide to v2.7
+Upgrade Guide to v2.8
 =======================
 
 To upgrade to the latest version with new features::
